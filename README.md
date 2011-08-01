@@ -37,7 +37,10 @@ You can copy local_empty.py as local.py for local testing, this file will be use
 Twitter mambo jumbo
 -----
 
-Create and setup your app at https://dev.twitter.com/apps, as soon as you got consumer key & secret use "python ara.py -a" to get keys & secret pairs for all your account defined in settings (you will need to be loggid in as the very account during this operation).
+Create and setup your app at https://dev.twitter.com/apps, as soon as you have consumer key & secret, use
+
+    python ara.py -a
+
+to get keys & secret pairs for all your account defined in settings (you will need to be logged in as the very account during this operation).
 
 Have fun!
-
