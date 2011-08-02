@@ -62,7 +62,10 @@ def repost_replies(account_name):
                         bot.dm(author,trigger[2])
                         break
 
-                    message = trigger[1]%' '.join(message[2:])
+                    len_params = {'message':'','user':author}
+                    mess_len = len(trigger[1]%len_params)
+                    params = {'message':bot.trim_message(' '.join(message[2:]),mess_len),'user':author}
+                    message = trigger[1]%params
                     logging.info('[%s] Tweeting message %s'%(account_name,message))
                     bot.tweet(message)
             except Exception,e:
