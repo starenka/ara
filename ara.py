@@ -55,19 +55,19 @@ def repost_replies(account_name):
                 if message[0] != '@%s'%account_name:
                     continue #not a "@reply"
 
-                for trigger in account['triggers']:
-                    rp.write('%s\n'%mess.id)
-                    if message[1] != trigger[0]:
-                        logging.warning('[%s] Bad message format, sending DM to author'%account_name)
-                        bot.dm(author,trigger[2])
-                        break
-
+                trigger = message[1]
+                triggers = dict(account['triggers'])
+                if trigger not in triggers:
+                    logging.warning('[%s] Bad message format, sending DM to author'%account_name)
+                    bot.dm(author,account['not_triggered'])
+                else:
                     len_params = {'message':'','user':author}
-                    mess_len = len(trigger[1]%len_params)
+                    mess_len = len(triggers[trigger]%len_params)
                     params = {'message':bot.trim_message(' '.join(message[2:]),mess_len),'user':author}
-                    message = trigger[1]%params
+                    message = triggers[trigger]%params
                     logging.info('[%s] Tweeting message %s'%(account_name,message))
                     bot.tweet(message)
+                rp.write('%s\n'%mess.id)
             except Exception,e:
                 logging.error('%s'%e)
                 continue

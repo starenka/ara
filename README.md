@@ -12,14 +12,15 @@ For each and every account there are couple settings to be defined:
                                         'secret':'yoursecretfrom aray.py -a',
                                         'triggers': (
                                             (   'CRASH',
-                                                '!! %(message)s via %(user)s #traffic #prague',
-                                                'This will be sent as DM for reply w/ nonexistent trigger.'
+                                                '!! %(message)s via %(user)s #traffic #prague'
                                             ),
                                         ),
+                                        'not_triggered': 'This will be sent as DM for reply w/ nonexistent trigger.'
                                      },
+
     }
 
-Pay attention to triggers, please. Take a look on @reply below. The first offset in triger touple eqauls to first word in @reply ("CRASH"). Second defines message format which will be reposted ("CRASH %(mess)s #crash via %(user)s" -> "!! Car-tram crash in Vodickova, near Vaclavske namesti. Jammed. #traffic #prague via @starenka") and the last one is the DM which will be sent to replies without any valid trigger.
+Pay attention to triggers, please. Take a look on @reply below. The first offset in triger touple eqauls to first word in @reply ("CRASH"). Second defines message format which will be reposted ("CRASH %(mess)s #crash via %(user)s" -> "!! Car-tram crash in Vodickova, near Vaclavske namesti. Jammed. #traffic #prague via @starenka"). If no trigger is found within the message 'not_triggered' message will be sent as DM to the user.
 
     @trafficbot-prague CRASH Car-tram crash in Vodickova, near Vaclavske namesti. Jammed.
 

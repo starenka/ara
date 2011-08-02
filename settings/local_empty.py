@@ -12,9 +12,9 @@ ACCOUNTS = {'meh': {    'key':'meh',
                         'triggers': (
                             ('XOXO', #triggering characters f.e "@myaccount XOXO A message to be reposted."
                             '%(mess)s #hi This message includes original reply also with %(user) name',
-                             'This will be sent as DM for reply w/ nonexistent trigger.'
                             ),
                         ),
+                        'not_triggered': 'This will be sent as DM for reply w/ nonexistent trigger.',
                     },
 }
 
