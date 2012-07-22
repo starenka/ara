@@ -33,7 +33,7 @@ To install required libs, use pip:
 
     pip install -r requirements.pip
 
-You can copy local_empty.py as local.py for local testing, this file will be used as setting file if present. Otherwise prod.py will be used. Bot uses MongoDb for logging. In case you don't have/want to use it, just look at util.py and modify it to suit your needs (maybe just standard python logging?).
+You can copy local_empty.py as local.py for local testing, this file will be used as setting file if present. Otherwise prod.py will be used. Bot uses Sentry for logging. In case you don't have/want to use it, just look at util.py and modify it to suit your needs (maybe just standard python logging?).
 
 Twitter mambo jumbo
 -----

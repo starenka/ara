@@ -8,7 +8,7 @@ from optparse import OptionParser
 
 import settings
 from twitterbot import TwitterBot
-from util import log as logging
+from util import logger as logging
 
 usage = 'Run python ara.py --help to see all options'
 oparser = OptionParser(usage)

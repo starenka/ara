@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#your MongoDB instance settings
-DB_LOG_HOST = '127.0.0.1'
-DB_LOG_PORT = 27017
-DB_LOG_NAME = 'logs'
-DB_LOG_COLLECTION = 'ara'
+SENTRY_DSN = ''
 
 ACCOUNTS = {'meh': {    'key':'meh',
                         'secret':'meh',

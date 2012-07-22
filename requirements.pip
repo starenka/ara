@@ -1,4 +1,3 @@
-tweepy
-pymongo
-http://urlgrabber.baseurl.org/download/urlgrabber-3.9.1.tar.gz
-git+git://github.com/andreisavu/mongodb-log.git#egg=mongolog
+tweepy==1.7.1
+requests
+raven
